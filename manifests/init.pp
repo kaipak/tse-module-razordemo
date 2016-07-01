@@ -7,7 +7,7 @@ class razordemo (
   ) inherits razordemo::params { 
   require pe_razor
   
-  Class['razordemo::forward_ipv4'] ->
+  class{ 'razordemo::forward_ipv4': } ->
   file_line { '/etc/hosts':
     ensure => 'absent',
     path   => '/etc/hosts',
